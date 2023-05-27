@@ -9,10 +9,9 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
+    path: nginx-helm-example
     repoURL: "https://github.com/Senan3188/nginx-helm-example.git"
     targetRevision: master
-    helm:
-     releaseName: my-release
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
