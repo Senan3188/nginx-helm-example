@@ -1,17 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: 
-  name: guestbook
+metadata:
+  name: nginx-helm-example
   namespace: argocd
-spec: 
-  destination: 
-    namespace: guestbook
+spec:
+  destination:
+    namespace: nginx-helm-example
     server: "https://kubernetes.default.svc"
   project: default
-  source: 
-    path: guestbook
-    repoURL: "https://github.com/mabusaa/argocd-example-apps.git"
+  source:
+    repoURL: "https://github.com/Senan3188/nginx-helm-example.git"
     targetRevision: master
+    helm:
+     releaseName: my-release
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
